@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<!-- 指定 hdfs抽象目录树入口 组名bd01  nameservers-->
+	<property>
+		<name>fs.defaultFS</name>
+		<value>hdfs://bd/</value>
+	</property>
+	
+	<!-- 指定 hadoop 工作目录 -->
+	<property>
+		<name>hadoop.tmp.dir</name>
+		<value>/home/fanger/data/hadoopdata/</value>
+	</property>
+	
+	<!-- 指定 zookeeper 集群访问地址 -->
+	<property>
+		<name>ha.zookeeper.quorum</name>
+		<value>hadoop01:2181,hadoop02:2181,hadoop03:2181</value>
+	</property>
+	<!-- 表示设置 hadoop的代理用户-->
+	<!-- 配置hdfs允许哪些外部主机连接  代理用户名-->
+	<property>
+		<name>hadoop.proxyuser.fanger.hosts</name>
+		<value>*</value>
+	</property>
+	<!-- 配置hdfs允许哪些外部主机连接  代理用户名 组-->
+	<property>
+		<name>hadoop.proxyuser.fanger.groups</name>
+		<value>*</value>
+	</property>
+</configuration>
